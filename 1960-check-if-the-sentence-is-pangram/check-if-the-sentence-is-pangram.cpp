@@ -9,10 +9,6 @@ public:
         for(int i = 0 ; i < n ; i++) {
             st.insert(sentence[i]);
         }
-
-        if(st.size() == 26){
-        return true;
-        }
-        return false;
+        return st.size() == 26;
     }
 };
