@@ -9,6 +9,7 @@ public:
         for (int i = 0; i < n; i++) {
             startingAltitude += gain[i];
             highest = max(highest, startingAltitude);
+            
         }
 
         return highest;
