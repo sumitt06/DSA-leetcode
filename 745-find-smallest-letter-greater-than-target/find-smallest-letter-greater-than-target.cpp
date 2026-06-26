@@ -4,7 +4,7 @@ public:
         char ans = letters[0];
         for(char ch : letters) {
             if(ch > target) {
-                ans = max(ans , ch);
+                ans = ch;
                 break;
             }
         }
