@@ -11,11 +11,10 @@ public:
                 return true;
             }
         }
+
         if(s1 != s2){
             swap(s1[0] , s1[2]);
             return s1 == s2;
-        }else{
-            return true;
         }
         return false;
     }
