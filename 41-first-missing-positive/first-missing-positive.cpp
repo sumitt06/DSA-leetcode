@@ -20,20 +20,35 @@ public:
         // }
         // return 1;
 
-        int missingPositive = 1;
+        // int missingPositive = 1;
+        // int n = nums.size();
+        // // sort(nums.begin() , nums.end());
+        // for(int i = 0 ; i < n ; i++) {
+        //     if(nums[i] < missingPositive) {
+        //         continue;
+        //     }
+        //     if(nums[i] == missingPositive) {
+        //         missingPositive++;
+        //     }
+        //     else if(nums[i] > missingPositive) {
+        //         continue;
+        //     }
+        // }
+        // return missingPositive;
+
         int n = nums.size();
-        sort(nums.begin() , nums.end());
         for(int i = 0 ; i < n ; i++) {
-            if(nums[i] < missingPositive) {
-                continue;
-            }
-            if(nums[i] == missingPositive) {
-                missingPositive++;
-            }
-            else if(nums[i] > missingPositive) {
-                break;
+            while(nums[i] >= 1 &&
+                   nums[i] <= n &&
+                   nums[i] != nums[nums[i] - 1]) {
+                swap(nums[i], nums[nums[i] - 1]);
             }
         }
-        return missingPositive;
+        for(int i = 0 ; i < n ; i++) {
+            if(nums[i] != i+1) {
+                return i+1;
+            }
+        }
+        return n+1;
     }
 };
