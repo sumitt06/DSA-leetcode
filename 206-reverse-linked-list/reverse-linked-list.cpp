@@ -23,15 +23,32 @@ public:
         // }
         // return previous;
 
-        vector<int> arr;
+
+        // //brute force approach by using vector array
+        // vector<int> arr;
+        // ListNode* temp = head;
+        // while (temp != NULL) {
+        //     arr.push_back(temp->val);
+        //     temp = temp->next;
+        // }
+        // temp = head;
+        // for (int i = arr.size() - 1; i >= 0; i--) {
+        //     temp->val = arr[i];
+        //     temp = temp->next;
+        // }
+        // return head;
+
+        //better approach by using stack
+        stack<int> st;
         ListNode* temp = head;
         while(temp != NULL) {
-            arr.push_back(temp -> val);
+            st.push(temp->val);
             temp = temp -> next;
         }
         temp = head;
-        for(int i = arr.size() - 1 ; i >= 0 ; i--) {
-                temp -> val = arr[i];
+        while(temp != NULL) {
+            temp -> val = st.top();
+            st.pop();
             temp = temp -> next;
         }
         return head;
