@@ -14,10 +14,11 @@ public:
         long long j = n;
         while(i <= j) {
             long long mid = (i + j)/2;
-            if(guess(mid) == 0) {
+            int result = guess(mid);
+            if(result == 0) {
                 return mid;
             }
-            else if(guess(mid) == -1)
+            else if(result == -1)
             {
                 j = mid - 1 ;
             }
