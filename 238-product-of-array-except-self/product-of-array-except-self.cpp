@@ -29,12 +29,14 @@ public:
         for(int i = 0 ; i < n ; i++) {
             prefixProduct[i] = prefix;
             prefix *= nums[i];
+        }
+        for(int i = n - 1 ; i >= 0 ; i--) {
             suffixProduct[i] = suffix;
-            suffix *= nums[n - i - 1];
+            suffix *= nums[i];
         }
         
         for(int i = 0 ; i < n ; i++) {
-            answer[i] = prefixProduct[i] * suffixProduct[n - i - 1];
+            answer[i] = prefixProduct[i] * suffixProduct[i];
         }
         return answer;
     }
