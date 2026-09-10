@@ -23,15 +23,13 @@ public:
         int suffix = 1 ;
         vector<int> prefixProduct ;
         vector<int> suffixProduct ;
-        prefixProduct.push_back(1);
-        suffixProduct.push_back(1);
-        for(int i = 1 ; i < n ; i++) {
-            prefix *= nums[i - 1];
+        for(int i = 0 ; i < n ; i++) {
             prefixProduct.push_back(prefix);
+            prefix *= nums[i];
         }
-        for(int i = n - 2 ; i >= 0 ; i--) {
-            suffix *= nums[i + 1];
+        for(int i = n - 1 ; i >= 0 ; i--) {
             suffixProduct.push_back(suffix);
+            suffix *= nums[i];
         } 
         vector<int> answer;
         int n2 = prefixProduct.size();
