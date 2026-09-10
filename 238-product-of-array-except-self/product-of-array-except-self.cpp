@@ -19,20 +19,22 @@ public:
         // return answer;
 
         int n = nums.size();
+        
+        vector<int> prefixProduct(n) ;
+        vector<int> suffixProduct(n) ;
+        vector<int> answer(n) ;
+
         int prefix = 1 ;
         int suffix = 1 ;
-        vector<int> prefixProduct ;
-        vector<int> suffixProduct ;
         for(int i = 0 ; i < n ; i++) {
-            prefixProduct.push_back(prefix);
+            prefixProduct[i] = prefix;
             prefix *= nums[i];
-            suffixProduct.push_back(suffix);
+            suffixProduct[i] = suffix;
             suffix *= nums[n - i - 1];
         }
-        vector<int> answer;
-        int n2 = prefixProduct.size();
-        for(int i = 0 ; i < n2 ; i++) {
-            answer.push_back(prefixProduct[i] * suffixProduct[n2 - i - 1]);
+        
+        for(int i = 0 ; i < n ; i++) {
+            answer[i] = prefixProduct[i] * suffixProduct[n - i - 1];
         }
         return answer;
     }
