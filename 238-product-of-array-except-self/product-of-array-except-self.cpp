@@ -26,11 +26,9 @@ public:
         for(int i = 0 ; i < n ; i++) {
             prefixProduct.push_back(prefix);
             prefix *= nums[i];
-        }
-        for(int i = n - 1 ; i >= 0 ; i--) {
             suffixProduct.push_back(suffix);
-            suffix *= nums[i];
-        } 
+            suffix *= nums[n - i - 1];
+        }
         vector<int> answer;
         int n2 = prefixProduct.size();
         for(int i = 0 ; i < n2 ; i++) {
