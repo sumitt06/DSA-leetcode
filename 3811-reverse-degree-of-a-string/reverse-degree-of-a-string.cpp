@@ -3,7 +3,7 @@ public:
     int reverseDegree(string s) {
         string alphabets = "zyxwvutsrqponmlkjihgfedcba";
         unordered_map<char , int>mpp;
-        for(int i = 0 ; i <= 26 ; i++) {
+        for(int i = 0 ; i < 26 ; i++) {
             mpp[alphabets[i]] = i + 1;
         }
         int sum = 0;
