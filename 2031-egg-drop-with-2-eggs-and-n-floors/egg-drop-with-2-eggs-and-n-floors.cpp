@@ -1,0 +1,12 @@
+class Solution {
+public:
+    int twoEggDrop(int n) {
+        int i = 1;
+        int temp = n;
+        while(temp > 0) {
+            temp -= i;
+            i++;
+        }
+        return i - 1;
+    }
+};
